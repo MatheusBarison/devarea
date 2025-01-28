@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Juros Compostos</title>  
+  <link rel="stylesheet" href="../assets/css/global/layout.css">  
+  <link rel="stylesheet" href="../assets/css/global/base.css">
+  <link rel="stylesheet" href="../assets/css/global/theme.css">   
+  <link rel="stylesheet" href="../assets/css/pages/calculator.css">
+  <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.6/dist/inputmask.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <div id="header"></div>
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Conteúdo Principal -->
+  <div class="main-content">
+    <div class="calculator">
+      <h1 class="h1">Simulador de Juros Compostos</h1>
+      <form id="compound-form">
+        <div class="form-row">
+          <div>
+            <label for="principal">Valor Inicial:</label>
+            <input type="text" id="principal" placeholder="" required>
+          </div>
+          <div>
+            <label for="monthly">Aporte Mensal:</label>
+            <input type="text" id="monthly" placeholder="" required>
+          </div>
+        </div>
+        <div class="second-row">
+          <div>
+            <label for="rate">Taxa de Juros:</label>
+            <input type="number" id="rate" step="0.01" placeholder="" required>
+          </div>
+          <div class="small-input">
+            <select id="rate-type">
+              <option value="monthly">Mensal</option>
+              <option value="yearly">Anual</option>
+            </select>
+          </div>
+          <div>
+            <label for="time">Período de Tempo:</label>
+            <input type="number" id="time" placeholder="" required>
+          </div>
+          <div class="small-input">
+            <select id="time-type">
+              <option value="months">Meses</option>
+              <option value="years">Anos</option>
+            </select>
+          </div>
+        </div>
+        <button type="button" id="calculate" class="button01">Calcular</button>
+      </form>
+      <div id="result">
+        <div class="result-card">
+          <h3>Valor Total:</h3>
+          <p id="total-value"></p>
+        </div>
+        <div class="result-card">
+          <h3>Total Investido:</h3>
+          <p id="total-invested"></p>
+        </div>
+        <div class="result-card">
+          <h3>Total em Juros:</h3>
+          <p id="total-interest"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- Footer -->
+ <div id="footer"></div>
+
+  <script src="../assets/js/pages/calculator.js"></script>
+  <script src="../assets/js/include.js"></script>
+  <script src="../assets/js/global/commom.js"></script>
+</body>
+</html>

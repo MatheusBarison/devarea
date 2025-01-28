@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Salário Líquido</title>
+  <link rel="stylesheet" href="../assets/css/global/layout.css">  
+  <link rel="stylesheet" href="../assets/css/global/base.css">
+  <link rel="stylesheet" href="../assets/css/global/theme.css">   
+  <link rel="stylesheet" href="../assets/css/pages/salary-calculator.css">
+  <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.6/dist/inputmask.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <div id="header"></div>
+
+  <!-- Sidebar -->
+  <div id="sidebar"></div>
+
+  <!-- Conteúdo principal -->
+  <main class="main-content">
+    <section class="salary-calculator">
+      <h1 class="h1">Calculadora de Salário Líquido</h1>
+      <p class="p">Preencha os campos abaixo para calcular seu salário líquido.</p>
+      <form id="salary-calculator-form">
+        <label for="gross-salary">Salário Bruto:</label>
+        <input type="text" id="gross-salary" placeholder="Digite seu salário bruto">   
+        
+        <label for="dependents">Número de Dependentes:</label>
+        <input class="input" type="number" id="dependents" placeholder="Digite o número de dependentes">
+        
+        <label for="discounts">Outros Descontos (opcional):</label>
+        <input class="input" type="number" id="discounts" placeholder="Digite outros descontos">
+        
+       <div class="pat01"> 
+        <button type="button" id="calculate-salary-btn" class="button01">Calcular Salário Líquido</button>
+       </div>
+      </form>
+      <div id="salary-result" class="result">
+        <p>O resultado será exibido aqui.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script src="../assets/js/pages/salary-calculator.js"></script>
+  <script src="../assets/js/include.js"></script>
+</body>
+</html>

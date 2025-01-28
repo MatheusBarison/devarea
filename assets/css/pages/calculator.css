@@ -1,0 +1,106 @@
+
+/* Calculadora */
+.calculator {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-row > div {
+  flex: 1;
+}
+
+.small-input select {
+  width: 75%;
+  padding: 6px;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: var(--text-color);  /* Usando a cor do texto */
+}
+
+/* Estilo para os inputs da segunda linha */
+.second-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.second-row > div {
+  flex: 1;
+}
+
+.second-row div:nth-child(1) {
+  margin-right: 5px;
+}
+
+.second-row div:nth-child(3) {
+  margin-right: 5px;
+}
+
+#result {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.result-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 30%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result-card h3 {
+  font-size: 18px;
+  color: var(--text-color);  /* Usando a cor do texto */
+}
+
+.result-card p {
+  font-size: 20px;
+  color: var(--primary-color);  /* Usando a cor primária */
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.result-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#result .result-card:first-child {
+  width: 32%;
+}
+
+#result .result-card:nth-child(2) {
+  width: 32%;
+}
+
+#result .result-card:last-child {
+  width: 32%;
+}

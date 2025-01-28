@@ -1,0 +1,211 @@
+/* Ajuste do corpo para garantir que o conteúdo principal não sobreponha o cabeçalho e rodapé fixos */
+body {
+  padding-top: 80px;  /* Deixa o conteúdo abaixo do cabeçalho fixo */
+  padding-bottom: 80px; /* Deixa o conteúdo acima do rodapé fixo */
+  font-family: Arial, sans-serif;
+  background-color: var(--secondary-color);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  /* Alinhando o conteúdo ao topo */
+  flex-direction: column;
+  min-height: 100vh;  /* Garantir que o corpo ocupe toda a altura */
+  box-sizing: border-box;
+}
+
+/* Cabeçalho - Fixado no topo */
+header {
+  position: fixed;
+  top: 0; /* Fixa o cabeçalho no topo */
+  left: 200px; /* Começa depois do sidebar (considerando 250px de largura da sidebar) */
+  width: calc(100% - 200px); /* Subtrai a largura da sidebar para que o header ocupe o restante da largura */
+  background: var(--primary-color); /* Cor do cabeçalho */
+  z-index: 1001; /* Garante que o cabeçalho fique sobre o conteúdo e a sidebar */
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.navbar .logo a {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .logo a:hover {
+  color: var(--secondary-color);
+  transform: scale(1.1);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.nav-links li a:active {
+  color: var(--primary-color);
+}
+
+.nav-links li a.active,
+.sidebar ul li a.active {  
+  font-weight: bold;
+  background-color: rgb(119, 119, 128);
+}
+
+/* Sidebar padrão */
+.sidebar {
+  position: fixed; /* Sidebar fixa na tela */
+  top: 0; /* Começa no topo */
+  left: 0; /* Alinhada à esquerda */
+  width: 200px; /* Largura da sidebar */
+  height: 100%; /* Ocupa toda a altura da janela */
+  background-color: rgb(1, 0, 5); /* Cor de fundo */
+  z-index: 1000; /* Sobrepõe os outros elementos */
+  overflow-y: auto; /* Adiciona rolagem se o conteúdo for maior que a altura */
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.938); /* Sombra para destaque */
+  transition: width 0.3s ease; /* Transição suave para expandir/colapsar */
+}
+
+/* Seta de alternância */
+.toggle-btn {
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%); /* Alinha verticalmente */
+  cursor: pointer;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+
+/* Quando o sidebar está colapsado */
+.sidebar.collapsed {
+  width: 80px !important; /* Largura do sidebar colapsado */
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed .toggle-btn .arrow {
+  transform: rotate(180deg); /* Seta vira para a esquerda quando o menu está colapsado */
+}
+
+.sidebar.collapsed .sidebar-content {
+  display: none; /* Esconde o conteúdo do sidebar quando colapsado */
+}
+
+.sidebar.collapsed ul li .text {
+  display: none; /* Esconde o texto dos itens */
+}
+
+
+/* Opções do menu */
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a .icon {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+.sidebar ul li a .text {
+  font-size: 16px;
+  white-space: nowrap;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Rodapé - Fixado no final */
+footer {
+  position: fixed;   /* Tornar o rodapé fixo */
+  bottom: 0;         /* Colar no final */
+  left: 0;
+  width: 100%;       /* Largura total */
+  background: var(--primary-color);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 14px;
+  z-index: 1000;     /* Garantir que o rodapé fique sobre outros elementos */
+}
+
+.button01 {
+  padding: 15px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button01:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/*centralizado com margem*/
+.pat01{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 5px 5px 5px;
+}
+
+/*box padrão */
+.main-content {
+  margin: 50px 50px 50px 50px;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+input, select {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 15px;
+}

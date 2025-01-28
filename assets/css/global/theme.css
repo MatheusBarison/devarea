@@ -1,0 +1,31 @@
+/* Definir as cores primária e secundária */
+:root {
+    --primary-color: #2b2a30;  /* Cor primária */
+    --secondary-color: #dfdff3;  /* Cor secundária */
+    --text-color: #333;  /* Cor do texto */
+    --accent-color: #000224; /* Cor de destaque */
+    --header-bg-color: #70019c; /* Cor do cabeçalho */
+  }
+
+  .logoImg{
+    height: 50px;
+  }
+  
+  .h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+  }
+  
+  .p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #666;
+  }
+  
+  label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }

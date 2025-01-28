@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de CNPJ</title>
+  <link rel="stylesheet" href="../assets/css/global/layout.css">  
+  <link rel="stylesheet" href="../assets/css/global/base.css">
+  <link rel="stylesheet" href="../assets/css/global/theme.css">   
+  <link rel="stylesheet" href="../assets/css/pages/generator-cnpj.css">
+</head>
+  <body>
+    <!-- Header -->
+    <div id="header"></div>
+
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
+
+    <!-- Conteúdo principal -->
+    <main class="main-content">
+      <section class="gerador-cnpj">
+        <!-- Navegação das Abas -->
+        <div class="tab-navigation">
+          <button class="button01 tab-btn active" data-tab="generator">Gerar CNPJ</button>
+          <button class="button01 tab-btn" data-tab="validator">Validar CNPJ</button>
+        </div>
+        
+        <!-- Conteúdo das Abas -->
+        <div id="generator-id" class="tab-content active">
+          <h1 class="h1">Gerador de CNPJ</h1>
+          <p class="p">Use esta ferramenta para gerar CNPJs válidos aleatoriamente.</p>         
+          <label>
+            <input type="checkbox" id="generate-without-mask"> Gerar sem máscara
+          </label>
+          <button id="generate-cnpj-btn" class="button01">Gerar CNPJ</button>
+          <div id="cnpj-result" class="result"></div>
+        </div>
+        
+        <div id="validator-id" class="tab-content">
+          <h1 class="h1">Validador de CNPJ</h1>
+          <input type="text" id="cnpj-input" placeholder="Digite um CNPJ">
+          <button id="validate-cnpj-btn" class="button01">Validar</button>
+          <div id="validation-result" class="result"></div>
+        </div>
+      </section>
+      
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="../assets/js/pages/generator-cnpj.js"></script>
+    <script src="../assets/js/include.js"></script>
+    
+  </body>
+</html>
