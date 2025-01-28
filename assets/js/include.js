@@ -61,6 +61,6 @@ window.onload = function() {
  setTimeout(setActiveLink, 100); // Timeout para aguardar o carregamento
 };
 
-
+console.log('here');
 
 
