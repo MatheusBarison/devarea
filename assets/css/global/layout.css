@@ -1,23 +1,39 @@
-/* Ajuste do corpo para garantir que o conteúdo principal não sobreponha o cabeçalho e rodapé fixos */
+/* Reset de Estilos Gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Corpo */
+html, body {
+  height: 100%;
+}
+
 body {
-  padding-top: 80px;  /* Deixa o conteúdo abaixo do cabeçalho fixo */
-  padding-bottom: 80px; /* Deixa o conteúdo acima do rodapé fixo */
   font-family: Arial, sans-serif;
-  background-color: var(--secondary-color);
   margin: 0;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;  /* Alinhando o conteúdo ao topo */
   flex-direction: column;
-  min-height: 100vh;  /* Garantir que o corpo ocupe toda a altura */
+  min-height: 100vh;
+  background-color: var(--secondary-color);
   box-sizing: border-box;
+}
+
+/* Estilo para campos com erro */
+input.error, select.error {
+  border: 2px solid red;
+}
+
+input.error:focus, select.error:focus {
+  border-color: darkred;
 }
 
 /* Cabeçalho - Fixado no topo */
 header {
-  position: fixed;
+  position: relative;
   top: 0; /* Fixa o cabeçalho no topo */
-  left: 200px; /* Começa depois do sidebar (considerando 250px de largura da sidebar) */
+  left: 200px; /* Começa depois do sidebar (considerando 200px de largura da sidebar) */
   width: calc(100% - 200px); /* Subtrai a largura da sidebar para que o header ocupe o restante da largura */
   background: var(--primary-color); /* Cor do cabeçalho */
   z-index: 1001; /* Garante que o cabeçalho fique sobre o conteúdo e a sidebar */
@@ -71,10 +87,11 @@ header {
   color: var(--primary-color);
 }
 
-.nav-links li a.active{
+.nav-links li a.active {
   font-weight: bold;
 }
-.sidebar ul li a.active {  
+
+.sidebar ul li a.active {
   font-weight: bold;
   background-color: rgb(119, 119, 128);
 }
@@ -86,8 +103,7 @@ header {
   left: 0; /* Alinhada à esquerda */
   width: 200px; /* Largura da sidebar */
   height: 100%; /* Ocupa toda a altura da janela */
-  background-color: rgb(1, 0, 5); /* Cor de fundo */
-  z-index: 1000; /* Sobrepõe os outros elementos */
+  background-color: rgb(1, 0, 5); /* Cor de fundo */  
   overflow-y: auto; /* Adiciona rolagem se o conteúdo for maior que a altura */
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.938); /* Sombra para destaque */
   transition: width 0.3s ease; /* Transição suave para expandir/colapsar */
@@ -126,7 +142,6 @@ header {
   display: none; /* Esconde o texto dos itens */
 }
 
-
 /* Opções do menu */
 .sidebar ul li {
   margin: 20px 0;
@@ -152,18 +167,19 @@ header {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Rodapé - Fixado no final */
+/* Rodapé - Posicionado ao final */
 footer {
-  position: fixed;   /* Tornar o rodapé fixo */
-  bottom: 0;         /* Colar no final */
-  left: 0;
-  width: 100%;       /* Largura total */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  position: relative;
   background: var(--primary-color);
   color: white;
   padding: 20px 0;
   text-align: center;
-  font-size: 14px;
-  z-index: 1000;     /* Garantir que o rodapé fique sobre outros elementos */
+  font-size: 14px;  
+  margin-top: auto; /* Garante que o rodapé fique no final do conteúdo */
 }
 
 .button01 {
@@ -182,17 +198,16 @@ footer {
   transform: scale(1.05);
 }
 
-/*centralizado com margem*/
-.pat01{
+/* Centralizado com margem */
+.pat01 {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 5px 5px 5px 5px;
 }
 
-/*box padrão */
+/* Box padrão */
 .main-content {
-  position: absolute;
   margin: 50px 50px 50px 50px;
   padding: 20px;
   width: 100%;
@@ -200,7 +215,8 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  min-height: 100vh;
+  flex-grow: 1; /* Faz o conteúdo ocupar o espaço restante */
+  box-sizing: border-box;
 }
 
 input, select {

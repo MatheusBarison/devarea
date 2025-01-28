@@ -43,10 +43,17 @@ function loadHTML(elementId, filePath) {
 function initializeSidebarToggle() {
   const toggleBtn = document.getElementById('toggle-btn');
   const sidebar = document.getElementById('sidebar');
+  const sidebarClass = document.querySelector('.sidebar');  
+  
   if (toggleBtn && sidebar) {    
-      toggleBtn.addEventListener('click', () => {             
+      toggleBtn.addEventListener('click', () => {        
+        if(sidebar.classList.contains('collapsed')){
+          sidebarClass.style.width = '200px';          
+        }else{
+          sidebarClass.style.width = '50px';          
+        }
         sidebar.classList.add('sidebar');
-        sidebar.classList.toggle('collapsed');
+        sidebar.classList.toggle('collapsed');        
     });
   }
 }
