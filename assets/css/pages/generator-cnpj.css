@@ -21,7 +21,6 @@
   text-align: center;
 }
 
-
 .gerador-cnpj input[type="text"] {
   padding: 10px;
   font-size: 16px;
@@ -51,15 +50,6 @@
 
 .gerador-cnpj #validation-result.invalid {
   color: red;
-}
-
-.gerador-cnpj label {
-  font-size: 14px;
-  color: var(--text-color);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 15px;
 }
 
 .gerador-cnpj input[type="checkbox"] {
