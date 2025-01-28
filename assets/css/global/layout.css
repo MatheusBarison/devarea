@@ -71,7 +71,9 @@ header {
   color: var(--primary-color);
 }
 
-.nav-links li a.active,
+.nav-links li a.active{
+  font-weight: bold;
+}
 .sidebar ul li a.active {  
   font-weight: bold;
   background-color: rgb(119, 119, 128);
@@ -190,6 +192,7 @@ footer {
 
 /*box padrão */
 .main-content {
+  position: absolute;
   margin: 50px 50px 50px 50px;
   padding: 20px;
   width: 100%;
