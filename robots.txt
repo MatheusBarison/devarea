@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://devarea.netlify.app/sitemap.xml
