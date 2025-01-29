@@ -32,14 +32,14 @@ document.addEventListener("DOMContentLoaded", function () {
   function calculateINSS(salary) {
     let discount = 0;
 
-    if (salary <= 1320.00) {
+    if (salary <= 1518.00) {
       discount = salary * 0.075;
-    } else if (salary <= 2571.29) {
-      discount = (1320.00 * 0.075) + ((salary - 1320.00) * 0.09);
-    } else if (salary <= 3856.94) {
-      discount = (1320.00 * 0.075) + ((2571.29 - 1320.00) * 0.09) + ((salary - 2571.29) * 0.12);
-    } else if (salary <= 7507.49) {
-      discount = (1320.00 * 0.075) + ((2571.29 - 1320.00) * 0.09) + ((3856.94 - 2571.29) * 0.12) + ((salary - 3856.94) * 0.14);
+    } else if (salary <= 2793.88) {
+      discount = (1518.00 * 0.075) + ((salary - 1518.00) * 0.09);
+    } else if (salary <= 4190.83) {
+      discount = (1518.00 * 0.075) + ((2793.88 - 1518.00) * 0.09) + ((salary - 2793.88) * 0.12);
+    } else if (salary <= 8157.41) {
+      discount = (1518.00 * 0.075) + ((2793.88 - 1518.00) * 0.09) + ((3856.94 - 2793.88) * 0.12) + ((salary - 4190.83) * 0.14);
     } else {
       discount = 877.24; // Teto do INSS em 2025
     }

@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-  <title>Simulador de Juros Compostos</title>  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Calculadora de juros compostos online com explicação detalhada e exemplos práticos. Aprenda como calcular juros compostos de forma simples e rápida.">
+  <title>Simulador de Juros Compostos</title>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4137061202287584"
-     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../assets/css/global/layout.css">  
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../assets/css/global/layout.css">
   <link rel="stylesheet" href="../assets/css/global/base.css">
-  <link rel="stylesheet" href="../assets/css/global/theme.css">   
+  <link rel="stylesheet" href="../assets/css/global/theme.css">
   <link rel="stylesheet" href="../assets/css/pages/calculator.css">
   <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.6/dist/inputmask.min.js"></script>
 </head>
+
 <body>
   <!-- Header -->
   <div id="header"></div>
 
-  <!-- Sidebar -->
-  <div id="sidebar"></div>
+  <!-- Sidebar 
+  <div id="sidebar"></div>-->
 
   <!-- Conteúdo Principal -->
   <div class="main-content">
@@ -74,12 +78,64 @@
       </div>
     </div>
   </div>
+  <main class="info-content">
+    <section>
+      <h2>Como usar a calculadora:</h2>
+      <section style="display: flex; justify-content: center; margin-bottom: 20px;">
+        <ol>
+          <li>Informe o Valor Inicial ou o Aporte Mensal.</li>
+          <li>Defina a Taxa de Juros e o Período desejado.</li>
+          <li>Clique em "Calcular" para obter o resultado.</li>
+        </ol>
+      </section>  
 
- <!-- Footer -->
- <div id="footer"></div>
+      <h2>Como funciona a calculadora de juros compostos?</h2>
+      <p>
+        A calculadora de juros compostos permite que você descubra o valor acumulado de um investimento ou empréstimo
+        com base na fórmula:
+      </p>
+      <div style="text-align: center; margin: 20px;">
+        <img src="../resources/juro-formula.png" alt="Fórmula dos Juros Compostos: M = C (1 + i)^n"
+          style="max-width: 100%; height: 100px;">
+      </div>
+      <p>
+        Onde:
+      </p>
+        <section style="display: flex; justify-content: center; margin-bottom: 20px;">
+          <ul>
+            <li><strong>M</strong>: Montante final (valor acumulado).</li>
+            <li><strong>C</strong>: Capital inicial (valor investido ou emprestado).</li>
+            <li><strong>i</strong>: Taxa de juros (em decimal, por exemplo, 5% = 0,05).</li>
+            <li><strong>n</strong>: Número de períodos (meses, anos, etc.).</li>
+          </ul>
+        </section>
+
+   
+      <h2>Exemplo prático</h2>
+      <p>Imagine que você investiu R$ 1.000,00 em uma aplicação que rende 5% ao mês durante 6 meses. O cálculo seria:
+      </p>
+      <div style="text-align: center; margin: 20px;">
+        <img src="../resources/juro-example.png" alt="Exemplo de cálculo de juros compostos"
+          style="max-width: 100%; height: 100px;">
+      </div>
+      <p>
+        Utilizando a fórmula, temos:
+        <strong>M = 1000 * (1 + 0,05)^6</strong>, que resulta em aproximadamente R$ 1.340,10.
+      </p>     
+   
+      <h2>Experimente agora!</h2>
+      <p>Preencha os campos acima para calcular o montante acumulado e entender como os juros compostos podem impactar
+        suas finanças!</p>
+    </section>
+  </main>
+
+
+  <!-- Footer -->
+  <div id="footer"></div>
 
   <script src="../assets/js/pages/calculator.js"></script>
   <script src="../assets/js/include.js"></script>
   <script src="../assets/js/global/commom.js"></script>
 </body>
+
 </html>

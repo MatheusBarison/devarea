@@ -30,20 +30,21 @@ document.addEventListener("DOMContentLoaded", function () {
     let valid = true;
   
     // Função para validar os campos
-    const validateInput = (input) => {
-      if (input.value.trim() === "") {
+    const validateInput = (input, input2) => {
+      if (input.value.trim() === "" && input2.value.trim() === "") {
         input.classList.add("error");
+        input2.classList.add("error");
         valid = false;
       } else {
         input.classList.remove("error");
+        input2.classList.remove("error");
       }
     };
   
     // Validando todos os inputs obrigatórios
-    validateInput(principal);
-    validateInput(monthly);
-    validateInput(rate);
-    validateInput(time);
+    validateInput(principal, monthly);
+    validateInput(rate, rate);
+    validateInput(time, time);
   
     // Se a validação falhar, não prosseguir
     if (!valid) {
@@ -52,8 +53,12 @@ document.addEventListener("DOMContentLoaded", function () {
   
     // Função para limpar a máscara de moeda e converter em número
     const cleanCurrency = (value) => {
-    // Remove o prefixo "R$ " e a vírgula
-    return parseFloat(value.replace('R$', '').replace('.', '').replace(',', '.'));
+      // Remove o prefixo "R$ " e a vírgula      
+      if(value == ''){
+        return 0;
+      }else{
+        return parseFloat(value.replace('R$', '').replace('.', '').replace(',', '.'));       
+      }
     };
   
     // Obter os valores dos campos de entrada após validação
@@ -61,8 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let monthlyValue = cleanCurrency(monthly.value);
     let rateValue = parseFloat(rate.value);
     let timeValue = parseInt(time.value);
-
-    console.log(principalValue);
   
     const rateTypeValue = rateType.value; // "monthly" ou "yearly"
     const timeTypeValue = timeType.value; // "months" ou "years"
@@ -79,11 +82,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Cálculo do montante final
     const compoundInterest = principalValue * Math.pow(1 + rateValue / 100, timeValue); // Juros compostos sobre o valor inicial
     const monthlyContribution = monthlyValue * ((Math.pow(1 + rateValue / 100, timeValue) - 1) / (rateValue / 100)); // Aportes mensais
-  
     const total = compoundInterest + monthlyContribution;
   
   
-    // Exibir os resultados nos cards
+    // Exibir os resultados nos cards    
     document.getElementById("total-value").innerHTML = `R$ ${total.toFixed(2)}`;
     document.getElementById("total-invested").innerHTML = `R$ ${(principalValue + monthlyValue * timeValue).toFixed(2)}`;
     document.getElementById("total-interest").innerHTML = `R$ ${(total - (principalValue + monthlyValue * timeValue)).toFixed(2)}`;
