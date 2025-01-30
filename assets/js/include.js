@@ -38,7 +38,7 @@ window.onload = function() {
  setTimeout(setActiveLink, 100); // Timeout para aguardar o carregamento
 };
 
-
+//Gerar breadcrumb dinâmico
 document.addEventListener("DOMContentLoaded", () => {
   const breadcrumbContainer = document.getElementById("breadcrumb-identifier");
   const path = window.location.pathname.split("/").filter(Boolean);
@@ -47,15 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentPath = "";
 
   path.forEach((segment, index) => {
-    currentPath += `/${segment}`;
+    currentPath += `/${segment}`;    
+    const formattedSegment = segment.replace(/-/g, " ").replace(/.html$/, "").replace(/\b\w/g, l => l.toUpperCase());    
     if (index === path.length - 1) {
-      breadcrumbHTML += `<li aria-current="page">${decodeURIComponent(segment)}</li>`;
+      const pageTitle = document.title || "Página Atual";
+      breadcrumbHTML += `<li aria-current="page">${decodeURIComponent(pageTitle)}</li>`;
     } else {
-      breadcrumbHTML += `<li><a href="${currentPath}">${decodeURIComponent(segment)}</a></li>`;
+      breadcrumbHTML += `<li><a href="../home.html">${decodeURIComponent(formattedSegment)}</a></li>`;
     }
   });
-  console.log(breadcrumbHTML);
-  console.log(breadcrumbContainer);
   breadcrumbContainer.innerHTML = breadcrumbHTML;
 });
 

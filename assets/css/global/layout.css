@@ -249,7 +249,7 @@ input, select {
   list-style: none;
   display: flex;
   padding: 0;
-  margin: 1rem 0;
+  margin: 1rem 1rem;
   font-size: 0.9rem;
   color: #6c757d;
 }
@@ -266,6 +266,7 @@ input, select {
 }
 
 .breadcrumb a {
+  font-size: large;
   text-decoration: none;
   color: #007bff;
   transition: color 0.2s;
@@ -276,6 +277,7 @@ input, select {
 }
 
 .breadcrumb li[aria-current="page"] {
+  font-size: large;
   font-weight: bold;
   color: #495057;
 }
