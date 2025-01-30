@@ -242,3 +242,42 @@ input, select {
   padding: 20px;
   margin: 20px 0;
 }
+
+
+/*COMEÇO DO BREADCRUMB ---------------------------------------------------------------- */
+.breadcrumb {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin: 0 0.5rem;
+  color: #6c757d;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: #0056b3;
+}
+
+.breadcrumb li[aria-current="page"] {
+  font-weight: bold;
+  color: #495057;
+}
+
+/*FINAL DO BREADCRUMB ---------------------------------------------------------------- */
